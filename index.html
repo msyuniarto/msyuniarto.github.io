@@ -1,104 +1,1097 @@
 <!DOCTYPE html>
-<html>
-       <head>
-              <meta name="viewport" content="width=device-width, initial-scale=1">
-              <title>CV Muhammad Sofi Yuniarto</title>
-              <link rel="stylesheet" href="assets/styles/style.css">
-       </head>
-       <body>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muhammad Sofi Yuniarto — Programmer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-              <header>
-                     <div class="jumbotron">
-                            <h1>Muhammad Sofi Yuniarto</h1>
-                            <p>Programmer, Full Time Learner</p>
-                     </div>
-                     <nav>
-                            <ul>
-                                   <li><a href="#beranda">Beranda</a></li>
-                                   <li><a href="#education">Education</a></li>
-                                   <li><a href="#experience">Experience</a></li>
-                                   <li><a href="#skill">Skill</a></li>
-                                   <li><a href="#sosmed">Sosial Media</a></li>
-                            </ul>
-                     </nav>
-              </header>
+  :root {
+    --white: #ffffff;
+    --bg: #f7f5f0;
+    --bg2: #eeebe4;
+    --ink: #1a1a18;
+    --ink2: #4a4a46;
+    --ink3: #8a8a84;
+    --accent: #1a5c3a;
+    --accent-light: #e8f2ec;
+    --accent2: #c8a96e;
+    --border: #dedad2;
+    --border-dark: #c8c4bc;
+  }
 
-              <main>
-                     <div id="content">
-                            <article id="beranda" class="card">
-                                   <h2 id="beranda">Beranda</h2>
-                                   <p>Experienced web developer with highly skilled in developing using PHP, HTML, JavaScript, and MySQL.</p>
-                            </article>
+  html { scroll-behavior: smooth; }
 
-                            <article id="education" class="card">
-                                   <h2 id="education">Education</h2>
-                                   <p>2019 - Lulus S1 Ilmu Komputer/ Informatika, Universitas Diponegoro</p>
-                            </article>
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.7;
+  }
 
-                            <article id="experience" class="card">
-                                   <h2 id="experience">Experience</h2>
-                                   <section>
-                                          <h3>Pengalaman Kerja</h3>
-                                          <h4>2019 - Sekarang</h4>
-                                          <p>PT CDC Global Informatika</p>
-                                   </section>
-                                   <section>
-                                          <h3>Pengalaman Organisasi</h3>
-                                          <h4>2014</h4>
-                                          <p>UKM Perisai Diri Universitas Diponegoro</p>
-                                   </section>
-                            </article>
-                            
-                            <article id="skill" class="card">
-                                   <h2 id="skill">Skill</h2>
-                                   <p>PHP</p>
-                                   <p>JavaScript</p>
-                                   <p>CSS</p>
-                                   <p>MySQL</p>
-                                   <p>Python</p>
-                            </article>
-                            
-                            <article id="sosmed" class="card">
-                                   <h2 id="sosmed">Sosial Media</h2>
-                                   <p>Silakan kunjungi akun media sosial saya</p>
-                                   <select type="text" id="pesan" onchange="myFunction()">
-                                          <option value="">---Silakan pilih---</option>
-                                          <option value="instagram">Instagram</option>
-                                          <option value="linkedin">Linkedin</option>
-                                   </select>
-                            </article>
-                     </div>
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(247,245,240,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 56px;
+  }
 
-                     <aside>
-                            <article class="profile">
-                                   <header>
-                                          <h2>Muhammad Sofi Yuniarto</h2>
-                                          <p>Programmer, Full Time Learner</p>
-                                          <figure>
-                                                 <img src="assets/image/profil.jpeg" class="profile">
-                                                 <figcaption>Foto Profil</figcaption>
-                                          </figure>
-                                   </header>
-                                   <section>
-                                          <h3>About Me</h3>
-                                          <table>
-                                                 <tr>
-                                                        <th>Birth Place</th>
-                                                        <td>Pekalongan</td>
-                                                 </tr>
-<!--                                                  <tr> -->
-<!--                                                         <th>Birth Time</th> -->
-<!--                                                         <td>1994-06-15</td> -->
-<!--                                                  </tr> -->
-                                          </table>
-                                   </section>
-                            </article>
-                     </aside>
-              </main>
+  .nav-logo {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+  }
 
-              <footer>
-                     <p>Curiculum Vitae &#169; 2021, Muhammad Sofi Yuniarto</p>
-              </footer>
-              <script src="assets/styles/submission.js"></script>
-       </body>
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+    color: var(--ink3);
+    text-decoration: none;
+    font-family: 'IBM Plex Mono', monospace;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  /* HERO */
+  .hero {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 96px 48px 80px;
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .hero-eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 58px;
+    font-weight: 700;
+    line-height: 1.05;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .hero-name em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--ink3);
+    margin-bottom: 24px;
+    letter-spacing: 0.05em;
+  }
+
+  .hero-bio {
+    font-size: 16px;
+    color: var(--ink2);
+    line-height: 1.75;
+    max-width: 520px;
+    margin-bottom: 36px;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    padding: 10px 20px;
+    border-radius: 2px;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  .btn-primary:hover { background: #164d30; }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--ink2);
+    border: 1px solid var(--border-dark);
+  }
+
+  .btn-outline:hover {
+    background: var(--bg2);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* HERO CARD */
+  .hero-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 28px;
+    margin-top: 8px;
+  }
+
+  .avatar-circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--accent-light);
+    border: 2px solid var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  .info-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 13px;
+  }
+
+  .info-icon {
+    font-size: 14px;
+    margin-top: 1px;
+    min-width: 16px;
+  }
+
+  .info-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--ink3);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: block;
+  }
+
+  .info-val {
+    color: var(--ink2);
+    font-size: 13px;
+  }
+
+  .info-val a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .divider-h {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 16px 0;
+  }
+
+  .badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 4px;
+  }
+
+  .badge {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    padding: 3px 8px;
+    border-radius: 2px;
+    background: var(--accent-light);
+    color: var(--accent);
+    letter-spacing: 0.05em;
+  }
+
+  /* DIVIDER */
+  .section-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  /* SECTION */
+  .section {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 64px 48px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .section-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--accent2);
+    letter-spacing: 0.1em;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  /* SKILLS */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 14px;
+  }
+
+  .skill-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 18px 20px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .skill-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 2px 12px rgba(26,92,58,0.08);
+  }
+
+  .skill-card-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent2);
+    margin-bottom: 12px;
+  }
+
+  .skill-pill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .skill-pill {
+    font-size: 12px;
+    font-family: 'IBM Plex Mono', monospace;
+    padding: 4px 9px;
+    border-radius: 2px;
+    background: var(--bg);
+    color: var(--ink2);
+    border: 1px solid var(--border);
+  }
+
+  /* PROJECTS */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+  }
+
+  .project-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .project-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 4px 20px rgba(26,92,58,0.08);
+  }
+
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  .project-card:hover::before { transform: scaleX(1); }
+
+  /* FEATURED / SOROTAN */
+  .project-card.featured {
+    border: 2px solid var(--accent);
+    background: linear-gradient(135deg, #f0f9f4 0%, #ffffff 60%);
+    position: relative;
+  }
+
+  .project-card.featured::before {
+    background: var(--accent2);
+    transform: scaleX(1);
+    height: 4px;
+  }
+
+  .featured-ribbon {
+    position: absolute;
+    top: 16px;
+    right: -1px;
+    background: var(--accent);
+    color: #fff;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 4px 12px 4px 10px;
+    border-radius: 2px 0 0 2px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .featured-ribbon::before {
+    content: '★';
+    font-size: 9px;
+  }
+
+  .project-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 3px 8px;
+    border-radius: 2px;
+    display: inline-block;
+    width: fit-content;
+  }
+
+  .project-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+
+  .project-desc {
+    font-size: 13px;
+    color: var(--ink2);
+    line-height: 1.65;
+    flex: 1;
+  }
+
+  .project-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+  }
+
+  .stack-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    padding: 3px 7px;
+    border-radius: 2px;
+    background: var(--bg2);
+    color: var(--ink3);
+  }
+
+  /* EXPERIENCE */
+  .exp-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+  }
+
+  .exp-timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 16px;
+    bottom: 16px;
+    width: 1px;
+    background: var(--border);
+  }
+
+  .exp-item {
+    padding-left: 36px;
+    padding-bottom: 40px;
+    position: relative;
+  }
+
+  .exp-item:last-child { padding-bottom: 0; }
+
+  .exp-dot {
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 2px solid var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .exp-dot-inner {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .exp-period {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--accent2);
+    letter-spacing: 0.08em;
+    margin-bottom: 4px;
+  }
+
+  .exp-company {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+
+  .exp-role {
+    font-size: 13px;
+    color: var(--ink3);
+    font-family: 'IBM Plex Mono', monospace;
+    margin-bottom: 16px;
+  }
+
+  .exp-card-inner {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 20px 22px;
+  }
+
+  .exp-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .exp-list li {
+    font-size: 13px;
+    color: var(--ink2);
+    line-height: 1.65;
+    padding-left: 16px;
+    position: relative;
+  }
+
+  .exp-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 11px;
+    top: 3px;
+  }
+
+  .exp-list li strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* EDUCATION + COURSES */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .edu-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px;
+  }
+
+  .edu-uni {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .edu-deg {
+    font-size: 13px;
+    color: var(--ink2);
+    margin-bottom: 12px;
+  }
+
+  .edu-year-badge {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 4px 10px;
+    border-radius: 2px;
+    display: inline-block;
+  }
+
+  .courses-list {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .course-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .course-row:last-child { border-bottom: none; }
+
+  .course-dot {
+    width: 6px;
+    height: 6px;
+    min-width: 6px;
+    border-radius: 50%;
+    background: var(--accent2);
+    margin-top: 7px;
+  }
+
+  .course-name {
+    font-size: 13px;
+    color: var(--ink);
+    line-height: 1.4;
+    margin-bottom: 2px;
+  }
+
+  .course-src {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--ink3);
+  }
+
+  /* CONTACT */
+  .contact-section {
+    background: var(--accent);
+    padding: 64px 48px;
+  }
+
+  .contact-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .contact-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+
+  .contact-sub {
+    font-size: 15px;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-end;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .contact-link:hover { color: #fff; }
+
+  .contact-link-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    padding: 20px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer p {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: rgba(255,255,255,0.3);
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow { animation: fadeUp 0.5s ease both; }
+  .hero-name { animation: fadeUp 0.5s 0.1s ease both; }
+  .hero-title { animation: fadeUp 0.5s 0.18s ease both; }
+  .hero-bio { animation: fadeUp 0.5s 0.26s ease both; }
+  .hero-cta { animation: fadeUp 0.5s 0.34s ease both; }
+  .hero-card { animation: fadeUp 0.5s 0.2s ease both; }
+
+  @media (max-width: 768px) {
+    .hero {
+      grid-template-columns: 1fr;
+      padding: 60px 24px 48px;
+    }
+    .hero-card { margin-top: 0; }
+    .hero-name { font-size: 40px; }
+    .section { padding: 48px 24px; }
+    .two-col { grid-template-columns: 1fr; }
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    .contact-inner { grid-template-columns: 1fr; }
+    .contact-links { align-items: flex-start; }
+    footer { flex-direction: column; gap: 8px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">msyuniarto.dev</div>
+  <ul class="nav-links">
+    <li><a href="#skills">skills</a></li>
+    <li><a href="#projects">projects</a></li>
+    <li><a href="#experience">experience</a></li>
+    <li><a href="#contact">contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <div class="hero-eyebrow">Available for opportunities</div>
+    <h1 class="hero-name">Muhammad Sofi<br><em>Yuniarto</em></h1>
+    <p class="hero-title">// Staff Programmer · Backend Specialist</p>
+    <p class="hero-bio">
+      5+ tahun membangun aplikasi web performa tinggi. Spesialis RESTful API dengan PHP dan Golang, berpengalaman mengelola sistem enterprise untuk klien-klien besar di industri otomotif dan fintech.
+    </p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="mailto:msyuniarto@gmail.com">Hubungi Saya →</a>
+      <a class="btn btn-outline" href="https://gitlab.com/msyuniarto" target="_blank">GitLab</a>
+      <a class="btn btn-outline" href="https://github.com/msyuniarto" target="_blank">GitHub</a>
+    </div>
+  </div>
+  <div class="hero-card">
+    <div class="avatar-circle">MSY</div>
+    <div class="info-row">
+      <div class="info-icon">📍</div>
+      <div>
+        <span class="info-label">Lokasi</span>
+        <span class="info-val">DKI Jakarta, Indonesia</span>
+      </div>
+    </div>
+    <div class="info-row">
+      <div class="info-icon">✉</div>
+      <div>
+        <span class="info-label">Email</span>
+        <span class="info-val"><a href="mailto:msyuniarto@gmail.com">msyuniarto@gmail.com</a></span>
+      </div>
+    </div>
+    <div class="info-row">
+      <div class="info-icon">🔗</div>
+      <div>
+        <span class="info-label">LinkedIn</span>
+        <span class="info-val"><a href="https://www.linkedin.com/in/msyuniarto" target="_blank">linkedin.com/in/msyuniarto</a></span>
+      </div>
+    </div>
+    <hr class="divider-h">
+    <div>
+      <span class="info-label" style="margin-bottom:8px;display:block;">Bahasa</span>
+      <div class="badge-row">
+        <span class="badge">🇮🇩 Indonesian — Native</span>
+        <span class="badge">🇬🇧 English — Intermediate</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- SKILLS -->
+<section class="section" id="skills">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <h2 class="section-title">Keahlian Teknis</h2>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-card-label">Languages</div>
+      <div class="skill-pill-list">
+        <span class="skill-pill">PHP</span>
+        <span class="skill-pill">Golang</span>
+        <span class="skill-pill">JavaScript</span>
+        <span class="skill-pill">Python</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-label">Frameworks</div>
+      <div class="skill-pill-list">
+        <span class="skill-pill">CakePHP</span>
+        <span class="skill-pill">Laravel</span>
+        <span class="skill-pill">Vue.js</span>
+        <span class="skill-pill">Next.js</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-label">Database</div>
+      <div class="skill-pill-list">
+        <span class="skill-pill">MySQL</span>
+        <span class="skill-pill">PostgreSQL</span>
+        <span class="skill-pill">SQLite</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-label">Version Control</div>
+      <div class="skill-pill-list">
+        <span class="skill-pill">Git</span>
+        <span class="skill-pill">GitLab</span>
+        <span class="skill-pill">GitHub</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-label">DevOps & Cloud</div>
+      <div class="skill-pill-list">
+        <span class="skill-pill">Docker</span>
+        <span class="skill-pill">AWS</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-label">Spesialisasi</div>
+      <div class="skill-pill-list">
+        <span class="skill-pill">RESTful API</span>
+        <span class="skill-pill">QRIS / Fintech</span>
+        <span class="skill-pill">High-concurrency</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- PROJECTS -->
+<section class="section" id="projects">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Proyek Unggulan</h2>
+  </div>
+  <div class="projects-grid">
+
+    <div class="project-card featured">
+      <div class="featured-ribbon">Sorotan</div>
+      <span class="project-tag">Backend · Fintech</span>
+      <h3 class="project-title">Real-time Payment Notification System</h3>
+      <p class="project-desc">Merancang sistem notifikasi pembayaran real-time dengan arsitektur high-concurrency untuk memastikan update transaksi instan. Backend ditenagai Golang untuk efisiensi penuh.</p>
+      <div class="project-stack">
+        <span class="stack-tag">Golang</span>
+        <span class="stack-tag">CakePHP 4</span>
+        <span class="stack-tag">MySQL</span>
+        <span class="stack-tag">REST API</span>
+      </div>
+    </div>
+
+    <div class="project-card featured">
+      <div class="featured-ribbon">Sorotan</div>
+      <span class="project-tag">Enterprise · Otomotif</span>
+      <h3 class="project-title">Dealer Management System (DMS)</h3>
+      <p class="project-desc">Pengembangan dan optimasi DMS yang digunakan oleh jaringan AHASS dan dealer Wahana Artha Group untuk mendukung operasional harian secara kritis dan stabil.</p>
+      <div class="project-stack">
+        <span class="stack-tag">PHP</span>
+        <span class="stack-tag">CakePHP</span>
+        <span class="stack-tag">MySQL</span>
+        <span class="stack-tag">REST API</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-tag">Mobile API · Integration</span>
+      <h3 class="project-title">WANDA Mobile Backend API</h3>
+      <p class="project-desc">Membangun dan mengoptimalkan backend API untuk aplikasi mobile WANDA, meningkatkan performa pengambilan data demi pengalaman pengguna yang lebih mulus.</p>
+      <div class="project-stack">
+        <span class="stack-tag">PHP</span>
+        <span class="stack-tag">REST API</span>
+        <span class="stack-tag">MySQL</span>
+      </div>
+    </div>
+
+    <div class="project-card featured">
+      <div class="featured-ribbon">Sorotan</div>
+      <span class="project-tag">Fintech · Payment</span>
+      <h3 class="project-title">Integrasi QRIS ke DMS AHASS</h3>
+      <p class="project-desc">Mengintegrasikan sistem pembayaran QRIS ke dalam aplikasi DMS AHASS, mempersingkat waktu transaksi secara signifikan dan meningkatkan kemudahan pembayaran pelanggan.</p>
+      <div class="project-stack">
+        <span class="stack-tag">PHP</span>
+        <span class="stack-tag">QRIS API</span>
+        <span class="stack-tag">CakePHP</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-tag">API · Scalable</span>
+      <h3 class="project-title">Scalable Dealer Group API</h3>
+      <p class="project-desc">Merancang dan memelihara RESTful API high-traffic untuk integrasi kompleks antar sistem dealer group, memastikan alur data yang aman, andal, dan cepat.</p>
+      <div class="project-stack">
+        <span class="stack-tag">PHP</span>
+        <span class="stack-tag">REST API</span>
+        <span class="stack-tag">PostgreSQL</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-tag">Enterprise · Multi-client</span>
+      <h3 class="project-title">Core Business System Management</h3>
+      <p class="project-desc">Lead developer untuk sistem bisnis inti klien-klien besar: PT Tristar Transindo, PT Krida Dinamik Autonusa, dan PT Megatama Mandiri — menjaga uptime 99,9%.</p>
+      <div class="project-stack">
+        <span class="stack-tag">PHP</span>
+        <span class="stack-tag">Laravel</span>
+        <span class="stack-tag">MySQL</span>
+        <span class="stack-tag">Git</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- EXPERIENCE -->
+<section class="section" id="experience">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Pengalaman Kerja</h2>
+  </div>
+  <div class="exp-timeline">
+
+    <div class="exp-item">
+      <div class="exp-dot"><div class="exp-dot-inner"></div></div>
+      <div class="exp-period">Oktober 2019 — Sekarang · 5+ Tahun</div>
+      <div class="exp-company">PT CDC Global Informatika</div>
+      <div class="exp-role">// Programmer</div>
+      <div class="exp-card-inner">
+        <ul class="exp-list">
+          <li><strong>Real-time Payment Architecture:</strong> Membangun sistem notifikasi pembayaran real-time berbasis Golang + CakePHP 4 untuk transaksi instan.</li>
+          <li><strong>Enterprise System:</strong> Lead developer sistem bisnis inti untuk PT Tristar Transindo, PT Krida Dinamik Autonusa, dan PT Megatama Mandiri dengan uptime 99,9%.</li>
+          <li><strong>DMS Optimization:</strong> Pengembangan fitur dan peningkatan stabilitas sistem DMS untuk AHASS dan jaringan dealer Wahana Artha Group.</li>
+          <li><strong>Scalable API:</strong> Desain dan pemeliharaan RESTful API high-traffic untuk integrasi antar sistem dealer yang kompleks.</li>
+          <li><strong>WANDA Mobile API:</strong> Membangun backend API untuk mendukung aplikasi mobile WANDA.</li>
+          <li><strong>QRIS Integration:</strong> Integrasi sistem pembayaran QRIS ke DMS AHASS, mempersingkat waktu transaksi dan meningkatkan kenyamanan pelanggan.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-dot"><div class="exp-dot-inner"></div></div>
+      <div class="exp-period">2018</div>
+      <div class="exp-company">Universitas Diponegoro Computer Lab</div>
+      <div class="exp-role">// Magang</div>
+      <div class="exp-card-inner">
+        <ul class="exp-list">
+          <li>Mengembangkan sistem absensi berbasis barcode menggunakan Visual Basic.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- EDUCATION + COURSES -->
+<section class="section">
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Pendidikan & Sertifikasi</h2>
+  </div>
+  <div class="two-col">
+    <div>
+      <div class="edu-card">
+        <div class="edu-uni">Universitas Diponegoro</div>
+        <div class="edu-deg">S1 Teknik Informatika</div>
+        <span class="edu-year-badge">Lulus 2019</span>
+      </div>
+    </div>
+    <div>
+      <div class="courses-list">
+        <div class="course-row">
+          <div class="course-dot"></div>
+          <div>
+            <div class="course-name">Belajar Back-End Pemula dengan JavaScript</div>
+            <div class="course-src">Dicoding · 2025</div>
+          </div>
+        </div>
+        <div class="course-row">
+          <div class="course-dot"></div>
+          <div>
+            <div class="course-name">Belajar Dasar Cloud dan Gen AI di AWS</div>
+            <div class="course-src">Dicoding · 2025</div>
+          </div>
+        </div>
+        <div class="course-row">
+          <div class="course-dot"></div>
+          <div>
+            <div class="course-name">Belajar Dasar Pemrograman JavaScript</div>
+            <div class="course-src">Dicoding · 2025</div>
+          </div>
+        </div>
+        <div class="course-row">
+          <div class="course-dot"></div>
+          <div>
+            <div class="course-name">FullStack API, Web, CMS & Docker Multi-Container</div>
+            <div class="course-src">BuildWithAngga · 2025</div>
+          </div>
+        </div>
+        <div class="course-row">
+          <div class="course-dot"></div>
+          <div>
+            <div class="course-name">Full-Stack Golang Vue NuxtJS: Website Crowdfunding</div>
+            <div class="course-src">BuildWithAngga · 2025</div>
+          </div>
+        </div>
+        <div class="course-row">
+          <div class="course-dot"></div>
+          <div>
+            <div class="course-name">Belajar Membuat Front-End Web untuk Pemula</div>
+            <div class="course-src">Dicoding · 2021</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div>
+      <h2 class="contact-headline">Mari Berkolaborasi</h2>
+      <p class="contact-sub">Terbuka untuk peluang baru, proyek menarik, atau sekadar ngobrol soal teknologi.</p>
+    </div>
+    <div class="contact-links">
+      <a class="contact-link" href="mailto:msyuniarto@gmail.com">
+        <div class="contact-link-icon">✉</div>
+        msyuniarto@gmail.com
+      </a>
+      <a class="contact-link" href="https://www.linkedin.com/in/msyuniarto" target="_blank">
+        <div class="contact-link-icon">in</div>
+        linkedin.com/in/msyuniarto
+      </a>
+      <a class="contact-link" href="https://gitlab.com/msyuniarto" target="_blank">
+        <div class="contact-link-icon">GL</div>
+        gitlab.com/msyuniarto
+      </a>
+      <a class="contact-link" href="https://github.com/msyuniarto" target="_blank">
+        <div class="contact-link-icon">GH</div>
+        github.com/msyuniarto
+      </a>
+      <a class="contact-link" href="tel:+6285811987251">
+        <div class="contact-link-icon">☎</div>
+        +62 858 1198 7251
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Muhammad Sofi Yuniarto</p>
+  <p>Built with HTML · CSS · Passion</p>
+</footer>
+
+</body>
 </html>
