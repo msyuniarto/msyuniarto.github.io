@@ -6,3 +6,17 @@ function myFunction() {
     }
     document.getElementById("pesan").value = "";
 }
+
+// Scroll to Top Button Functionality
+window.onscroll = function() {
+    const btn = document.getElementById("scrollToTopBtn");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        btn.classList.add("show");
+    } else {
+        btn.classList.remove("show");
+    }
+};
+
+document.getElementById("scrollToTopBtn").onclick = function() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+};
